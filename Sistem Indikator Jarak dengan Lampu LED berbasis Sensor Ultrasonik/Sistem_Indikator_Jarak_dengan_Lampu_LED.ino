@@ -2,14 +2,14 @@
 #define echoPin 22
 
 #define redLED 12
-#define greenLED 13
+#define yellowLED 13
 
 void setup() {
   Serial.begin(115200);
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
   pinMode(redLED, OUTPUT);
-  pinMode(greenLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
 }
 
 void loop() {
@@ -33,13 +33,13 @@ void loop() {
   // Logika nyala lampu
   if (distance > 100) {
     digitalWrite(redLED, HIGH);
-    digitalWrite(greenLED, LOW);
+    digitalWrite(yellowLED, LOW);
   } else if (distance > 50) {
     digitalWrite(redLED, LOW);
-    digitalWrite(greenLED, LOW);
+    digitalWrite(yellowLED, LOW);
   } else {
     digitalWrite(redLED, LOW);
-    digitalWrite(greenLED, HIGH);
+    digitalWrite(yellowLED, HIGH);
   }
 
   delay(1000);
